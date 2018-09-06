@@ -10,11 +10,7 @@ describe('watchdog plugin', () => {
     const { initialState } = plugin
 
     assert.equal(plugin.type, 'ws2')
-    assert.equal(initialState.isOpen, false)
-    assert.equal(initialState.isClosing, false)
     assert.equal(initialState.isReconnecting, false)
-    assert.equal(initialState.isAuthenticated, false)
-    assert.equal(initialState.wasAuthenticated, false)
     assert.equal(initialState.wdTimeout, null)
   })
 
