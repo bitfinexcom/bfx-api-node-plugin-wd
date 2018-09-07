@@ -3,15 +3,10 @@
 
 const assert = require('assert')
 const WebSocket = require('ws')
-const Core = require('bfx-api-node-core')
-const Sinon = require('sinon')
-
 const onSelfReconnect = require('self/reconnect')
 
 describe('self:reconnect', () => {
   it('clears timeout and reconnects if socket is closed', (done) => {
-    Sinon.stub(Core, 'reopen')
-
     const wdTimeout = setTimeout(() => {
       done(new Error('wd timeout should have been cleared'))
     }, 10)
