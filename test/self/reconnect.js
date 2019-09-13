@@ -26,8 +26,8 @@ describe('self:reconnect', () => {
     })
 
     const [, stateUpdate] = res
-    assert.equal(stateUpdate.wdTimeout, null)
-    assert.equal(stateUpdate.isReconnecting, false)
+    assert.strictEqual(stateUpdate.wdTimeout, null)
+    assert.strictEqual(stateUpdate.isReconnecting, false)
 
     setTimeout(() => {
       done()
@@ -38,8 +38,8 @@ describe('self:reconnect', () => {
     const handler = onSelfReconnect({
       getState: () => ({}),
       emit: (ev, eventName) => {
-        assert.equal(ev, 42)
-        assert.equal(eventName, 'reconnect')
+        assert.strictEqual(ev, 42)
+        assert.strictEqual(eventName, 'reconnect')
         done()
       }
     }, {
@@ -55,7 +55,7 @@ describe('self:reconnect', () => {
       }
     })
 
-    assert.equal(res, null)
+    assert.strictEqual(res, null)
   })
 
   it('clears reconnecting flag if socket is not closed or closing', () => {
@@ -75,6 +75,6 @@ describe('self:reconnect', () => {
     })
 
     const [, stateUpdate] = res
-    assert.equal(stateUpdate.isReconnecting, false)
+    assert.strictEqual(stateUpdate.isReconnecting, false)
   })
 })

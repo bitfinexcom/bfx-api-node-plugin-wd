@@ -9,6 +9,6 @@ describe('ws:open', () => {
     const handler = onWSOpen()
     const res = handler()
 
-    assert.equal(res.managedClose, true)
+    assert.strictEqual(res.managedClose, true)
   })
 })
