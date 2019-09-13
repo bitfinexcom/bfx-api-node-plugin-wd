@@ -9,9 +9,9 @@ describe('watchdog plugin', () => {
     const plugin = WDPlugin()
     const { initialState } = plugin
 
-    assert.equal(plugin.type, 'ws2')
-    assert.equal(initialState.isReconnecting, false)
-    assert.equal(initialState.wdTimeout, null)
+    assert.strictEqual(plugin.type, 'ws2')
+    assert.strictEqual(initialState.isReconnecting, false)
+    assert.strictEqual(initialState.wdTimeout, null)
   })
 
   it('triggers a reconnect event if no message is received within the specified wd interval', (done) => {
@@ -29,9 +29,9 @@ describe('watchdog plugin', () => {
 
         ev: {
           emit: (eventName, id, label, args) => {
-            assert.equal(eventName, 'plugin:event')
-            assert.equal(id, 'bfx.wd')
-            assert.equal(label, 'close')
+            assert.strictEqual(eventName, 'plugin:event')
+            assert.strictEqual(id, 'bfx.wd')
+            assert.strictEqual(label, 'close')
             done()
           }
         }

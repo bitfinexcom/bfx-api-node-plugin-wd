@@ -11,14 +11,14 @@ describe('ws:close', () => {
     })
 
     const res = handler()
-    assert.equal(res, null)
+    assert.strictEqual(res, null)
   })
 
   it('emits reconnect event on a timeout if autoReconnect is enabled', (done) => {
     const handler = onWSClose({
       emit: (ev, eventName) => {
-        assert.equal(ev, 42)
-        assert.equal(eventName, 'reconnect')
+        assert.strictEqual(ev, 42)
+        assert.strictEqual(eventName, 'reconnect')
         done()
       }
     }, {
@@ -33,6 +33,6 @@ describe('ws:close', () => {
     })
 
     const [, stateUpdate] = res
-    assert.equal(stateUpdate.isReconnecting, true)
+    assert.strictEqual(stateUpdate.isReconnecting, true)
   })
 })

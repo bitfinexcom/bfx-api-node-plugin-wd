@@ -14,7 +14,7 @@ describe('ws:message', () => {
     })
 
     const res = handler()
-    assert.equal(res, null)
+    assert.strictEqual(res, null)
   })
 
   it('updates the wd timeout on new messages if wd delay specified', (done) => {
@@ -25,8 +25,8 @@ describe('ws:message', () => {
     const handler = onWSMessage({
       getState: () => ({ wdTimeout }),
       emit: (ev, eventName) => {
-        assert.equal(ev, 42)
-        assert.equal(eventName, 'close')
+        assert.strictEqual(ev, 42)
+        assert.strictEqual(eventName, 'close')
         done()
       }
     }, {
