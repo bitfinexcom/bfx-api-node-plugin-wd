@@ -4,6 +4,7 @@
 const assert = require('assert')
 const WebSocket = require('ws')
 const onSelfReconnect = require('self/reconnect')
+const { EventEmitter } = require('events')
 
 describe('self:reconnect', () => {
   it('clears timeout and reconnects if socket is closed', (done) => {
@@ -17,8 +18,10 @@ describe('self:reconnect', () => {
       reconnectDelay: 10
     })
 
+    const ev = new EventEmitter()
     const res = handler({
       state: {
+        ev,
         ws: {
           readyState: WebSocket.CLOSED
         }
