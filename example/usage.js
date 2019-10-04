@@ -4,7 +4,7 @@ process.env.DEBUG = '*'
 
 const debug = require('debug')('bfx:api:plugins:wd:example')
 const { Manager } = require('bfx-api-node-core')
-const WDPlugin = require('../')
+const WDPlugin = require('..')
 
 const mgr = new Manager({
   transform: true,
