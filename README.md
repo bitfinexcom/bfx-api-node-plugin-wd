@@ -42,7 +42,7 @@ mgr.openWS()
 
 ### Docs
 
-For an executable example, see `examples/usage.js`
+For an executable example, [see `examples/usage.js`](/examples/usage.js)
 
 ### Contributing
 
