@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 'use strict'
 
-const onSelfClose = require('self/close')
+const onSelfClose = require('../../lib/self/close')
 
 describe('self:close', () => {
   const handler = onSelfClose()
