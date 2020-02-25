@@ -2,7 +2,7 @@
 'use strict'
 
 const assert = require('assert')
-const onWSClose = require('ws/close')
+const onWSClose = require('../../lib/ws/close')
 
 describe('ws:close', () => {
   it('does nothing if autoReconnect is not enabled', () => {

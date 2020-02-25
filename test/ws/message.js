@@ -3,7 +3,7 @@
 
 const assert = require('assert')
 const _isFinite = require('lodash/isFinite')
-const onWSMessage = require('ws/message')
+const onWSMessage = require('../../lib/ws/message')
 
 describe('ws:message', () => {
   it('does nothing if an invalid packet wd delay is specified', () => {

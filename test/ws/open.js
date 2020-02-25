@@ -2,7 +2,7 @@
 'use strict'
 
 const assert = require('assert')
-const onWSOpen = require('ws/open')
+const onWSOpen = require('../../lib/ws/open')
 
 describe('ws:open', () => {
   it('sets managed close flag', () => {
