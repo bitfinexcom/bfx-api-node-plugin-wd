@@ -1,9 +1,12 @@
 /* eslint-env mocha */
 'use strict'
 
-const assert = require('assert')
-const { EventEmitter } = require('events')
 const WebSocket = require('ws')
+const assert = require('assert')
+const _isArray = require('lodash/isArray')
+const _isObject = require('lodash/isObject')
+const { EventEmitter } = require('events')
+
 const onSelfReconnect = require('../../lib/self/reconnect')
 
 describe('self:reconnect', () => {
@@ -28,11 +31,13 @@ describe('self:reconnect', () => {
       }
     })
 
-    const [, stateUpdate] = res
+    const [wsState, stateUpdate] = res
+    assert.ok(_isObject(wsState))
     assert.strictEqual(stateUpdate.wdTimeout, null)
     assert.strictEqual(stateUpdate.isReconnecting, false)
 
     setTimeout(() => {
+      wsState.ws.close()
       done()
     }, 20)
   })
@@ -58,7 +63,10 @@ describe('self:reconnect', () => {
       }
     })
 
-    assert.strictEqual(res, null)
+    assert.ok(_isArray(res))
+    assert.strictEqual(res[0], null)
+    assert.ok(_isObject(res[1]))
+    assert.ok(res[1].reconnectTimeout)
   })
 
   it('clears reconnecting flag if socket is not closed or closing', () => {
