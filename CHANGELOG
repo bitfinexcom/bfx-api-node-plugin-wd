@@ -1,3 +1,6 @@
+# 1.0.4
+- fix: clear timeouts if the manager destroys our socket
+
 # 1.0.3
 - fix: use relative paths to allow generic mocha executio
 
