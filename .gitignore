@@ -9,3 +9,4 @@ todo
 package-lock.json
 .env
 tags
+.prettierrc.json
