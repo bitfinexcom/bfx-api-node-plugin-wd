@@ -2,7 +2,10 @@
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-api-node-plugin-wd.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-api-node-plugin-wd)
 
-This plugin implements a watch-dog for the Bitfinex Node API. It can be initialized with a reconnection & watch dog delay, and will close the socket connection & automatically reconnect if no message arrives within the WD delay. It is meant to be used to detect and cycle stale socket connections.
+This plugin implements a watch-dog for the Bitfinex Node API. It can be
+initialized with a reconnection & watch dog delay, and will close the socket
+connection & automatically reconnect if no message arrives within the WD delay.
+It is meant to be used to detect and cycle stale socket connections.
 
 ### Features
 
@@ -15,6 +18,7 @@ npm i --save bfx-api-node-plugin-wd
 ```
 
 ### Quickstart & Example
+
 ```js
 const debug = require('debug')('bfx:api:plugins:wd:example')
 const { Manager, subscribe } = require('bfx-api-node-core')
@@ -42,7 +46,8 @@ mgr.openWS()
 
 ### Docs
 
-For an executable example, [see `examples/usage.js`](/examples/usage.js)
+API documentation can be found in [`docs/reference.md`](docs/reference.md), and
+examples in the [`examples`](examples) folder.
 
 ### Contributing
 
