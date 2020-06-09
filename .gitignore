@@ -10,3 +10,5 @@ package-lock.json
 .env
 tags
 .prettierrc.json
+.nyc_output
+coverage
